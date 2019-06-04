@@ -1,0 +1,16 @@
+<div class="row">
+  <div class="col-2">
+    <img [src]="productosData.url" alt="" class="img-thumbnail img-circle">
+
+  </div>
+  <div class="col">
+    <h3>{{productosData.id}}</h3>
+    <p>{{productosData.title}}</p>
+  </div>
+
+  <div class="col-4 text-right">
+    <button routerLink="/search" class="btn btn-outline-danger">
+      Regresar
+    </button>
+  </div>
+</div>

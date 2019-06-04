@@ -1,0 +1,28 @@
+<div class="row">
+  <div class="col">
+    <input #termino type="text" (keyup)="buscar(termino.value)" class="form-control" placeholder="Escriba el id del producto">
+  </div>
+</div>
+
+<div class="container m-5">
+    <div class="d-flex justify-content-center" *ngIf="!loading">
+        <div class="spinner-border" role="status">
+          <span class="sr-only">Cargando...</span>
+        </div>
+      </div>
+      <div class="container" *ngIf="loading">
+        <div class="card-columns">
+          <div (click)="verProducto( product )"  *ngFor="let product of productosData" class="card puntero">
+            <div class="container text-center">
+                <img [src]="product.thumbnailUrl" class="rounded-circle" alt="..." height="120" width="120">
+            </div>
+            
+            <div class="card-body">
+              <h5 class="card-title"><span class="badge badge-pill badge-primary">{{product.id}}</span></h5>
+              <p class="card-text">
+                {{product.title}}</p>
+            </div>
+          </div>
+          </div>
+      </div>
+</div>
